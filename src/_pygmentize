@@ -41,19 +41,25 @@
 _pygmentize() {
   local context state line
 
-  _arguments -s -S \
-    '-h[prints help]:' \
-    '-V[prints the package version]:' \
-    '-L[lists lexers, formatters, styles or filters]:args:(lexers formatters styles filters):' \
+  _arguments \
+    '(: -)-h[prints help]' \
+    '(: -)-V[prints the package version]:' \
+    '(: -)-L[lists lexers, formatters, styles or filters]:args:(lexers formatters styles filters):' \
+    '(: -)-N[guesses and prints out a lexer name based solely on given filename]:FILENAME:_files:' \
+    '(: -)-H[prints detailed help for the object <name> of type <type>]:' \
     '-f[formatter]:FORMATTER:_get_formatters' \
     '-o[output file]:FILENAME:_gnu_generic' \
-    '(-h -V -L -f -o -S -F -H -g -l)-N[guesses and prints out a lexer name based solely on given filename]:FILENAME:_files:' \
     '(-h -V -L -o -F -H -g -l -N)-S[style]:STYLE:_get_styles' \
     '-F[filter]:STYLE:_get_filters' \
-    '-H[prints detailed help for the object <name> of type <type>]:' \
     '(-g)-l[lexer]::LEXER:_get_lexers:' \
     '(-l)-g[attempt to guess the lexer from the file contents]' \
     '*:args:_gnu_generic'
+#    '-O[options writeme]: : ' \
+#    '-P[option=value writeme]: : ' \
+#    '-s[s writeme]' \
+#    '-v[v writeme]' \
+#    '-x[x writeme]' \
+#    '-a[a writeme]' \
 }
 
 

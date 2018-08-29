@@ -1,4 +1,4 @@
-#compdef chromium
+#compdef google-chrome google-chrome-stable chromium
 
 # Copyright 2018 CERN for the benefit of the LHCb Collaboration
 
